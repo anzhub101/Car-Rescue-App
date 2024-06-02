@@ -1,0 +1,13 @@
+<m-container>
+    <br><br>
+    <h1> Defining a Route</h1>
+    <button class="pure-button" (click)="storeRoute()">Store Route</button>
+    <button class="pure-button" (click)="getRouteFromFirebase()">Get Route</button>
+    <button class="pure-button" (click)="playRoute()">Play Route</button>
+    <m-map 
+        [zoomLevel]="10"
+        [lat]="lat"
+        [lng]="lng"
+        (mapInstance)="getMapInstance($event)"
+    ></m-map>
+</m-container>
