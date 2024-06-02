@@ -1,1 +1,21 @@
-<p>track works!</p>
+<m-container>
+    <br><br>
+    <h1> Tracking a Route</h1>
+    <form class="pure-form pure-form-stacked">
+        <label for="input1">Bus Number </label>
+        <input placeholder="" [(ngModel)]="busNumber" type="number" [ngModelOptions]="{standalone: true}"/>
+    </form>
+    <button class="pure-button" (click)="getRouteFromFirebase()">Get Route</button>
+    <m-aha type="{{toast.type}}" header="{{toast.header}}" *ngIf="toast.ngIfControl">
+        {{toast.message}}
+    </m-aha>
+<ul>
+    <li *ngFor="let address of addresses; index as i">Stop {{(i+1)}}. {{address}}</li>
+</ul>
+    <m-map 
+        [zoomLevel]="10"
+        [lat]="lat"
+        [lng]="lng"
+        (mapInstance)="getMapInstance($event)"
+    ></m-map>
+</m-container>

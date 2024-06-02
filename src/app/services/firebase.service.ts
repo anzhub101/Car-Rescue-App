@@ -13,6 +13,9 @@ export class FirebaseService {
       this.setupFirebase();  
       this.db = getDatabase();    
       }
+      getFirebaseDatabase(){
+        return this.db;
+      }
       setupFirebase(){
         const firebaseConfig = {
           apiKey: "AIzaSyDqwbmTw1DYzmMdTDW6rzBn8q1Y1fn31uk",
