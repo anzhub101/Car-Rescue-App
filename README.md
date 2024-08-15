@@ -1,6 +1,6 @@
-# DeliveryApp
+# Car Rescue App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+This project was written to create an app that can help assist users with when their car has broken down.
 
 ## Development server
 
