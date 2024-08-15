@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TrackComponent } from './track.component';
+import { Feature2Component } from './feature2.component';
 
-describe('TrackComponent', () => {
-  let component: TrackComponent;
-  let fixture: ComponentFixture<TrackComponent>;
+describe('Feature2Component', () => {
+  let component: Feature2Component;
+  let fixture: ComponentFixture<Feature2Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TrackComponent]
+      imports: [Feature2Component]
     })
     .compileComponents();
-    
-    fixture = TestBed.createComponent(TrackComponent);
+
+    fixture = TestBed.createComponent(Feature2Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

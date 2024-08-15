@@ -1,0 +1,47 @@
+<m-container>
+    <br><br>
+    <h1>
+        Here are a few different Self help guides.
+    </h1>
+    <h2>
+        Click on the appropriate button the appropriate title to view the self help.
+    </h2>
+    <div>
+        <h2>Changing a Tire</h2>
+        <button  class="button-success pure-button" (click)="showCard('tire')">
+            View Instructions</button>
+        <m-card *ngIf="selectedCard === 'tire'" [header]="'Changing a Tire'" [subheader]="'Steps to follow'"
+          [imageurl]="'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHN5Z254aGQ5MGY0OHVuNnh5Ym0xbHEyZTY4cWFvN3pycXA5cXk3bCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QJD4rNC0uUAZkhWczv/giphy.gif'">
+          <p>1. Loosen the lug nuts.</p>
+          <p>2. Lift the car with a jack.</p>
+          <p>3. Remove the tire and replace it with the spare.</p>
+          <p>4. Tighten the lug nuts.</p>
+        </m-card>
+      </div>
+    
+      <div>
+        <h2>Jump Starting a Battery</h2>
+        <button class="button-success pure-button" (click)="showCard('battery')">
+            View Instructions</button>
+        <m-card *ngIf="selectedCard === 'battery'" [header]="'Jump Starting a Battery'" [subheader]="'Follow these steps'"
+          [imageurl]="'https://i.makeagif.com/media/10-31-2016/4hqJU7.gif'">
+          <p>1. Connect the positive jumper cable to the positive terminal of the dead battery.</p>
+          <p>2. Connect the other end of the positive cable to the positive terminal of the good battery.</p>
+          <p>3. Connect the negative cable to the negative terminal of the good battery.</p>
+          <p>4. Connect the other end of the negative cable to a metal part of the car with the dead battery.</p>
+          <p>5. Start the car with the good battery, then try to start the car with the dead battery.</p>
+        </m-card>
+      </div>
+    
+      <div>
+        <h2>Adding Engine Oil</h2>
+        <button class="button-success pure-button" (click)="showCard('oil')">View Instructions</button>
+        <m-card *ngIf="selectedCard === 'oil'" [header]="'Adding Engine Oil'" [subheader]="'Follow these steps'"
+          [imageurl]="'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/oil-change-1555450670.gif?crop=0.9204545454545454xw:1xh;center,top&resize=980:*'">
+          <p>1. Open the hood and find the oil filler cap.</p>
+          <p>2. Remove the oil filler cap and add necessary amount of oil.</p>
+          <p>3. Fit the oil filler cap securely.</p>
+          <p>4. Check the oil level with the dipstick to ensure it's within the proper range.</p>
+        </m-card>
+      </div>
+</m-container>

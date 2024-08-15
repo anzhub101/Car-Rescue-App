@@ -1,0 +1,11 @@
+<m-container>
+    <br><br><br>
+    <h1>Here is a map with your location and users who are within 1 kilometer away.</h1>
+    <h2>Tap on the marker to see the user's number</h2>
+    <h3>Name: {{ helpUser }} Number: {{ helpNumber }} Distance: {{distance}}</h3>
+    <m-map
+[zoomLevel]="10"
+[lat]="lat"
+[lng]="lng" (mapInstance)="getMapInstance($event)"
+></m-map>
+</m-container>

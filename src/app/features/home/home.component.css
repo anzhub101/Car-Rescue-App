@@ -1,0 +1,9 @@
+.small-button {
+    width: 240px; /* Adjust width to make the button shorter */
+    padding: 8px 10px; /* Smaller padding */
+    text-align: center; /* Center text inside button */
+  }
+  
+  .button-container {
+    text-align: center; /* Center the button */
+  }

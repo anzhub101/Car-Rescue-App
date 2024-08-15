@@ -1,0 +1,65 @@
+<section>
+    <div class="container" id="container" [class.right-panel-active]="rightPanelActive">
+      <div class="form-container sign-up-container">
+        <form #signUpForm="ngForm" (ngSubmit)="signUp(signUpForm)">
+          <h1>Sign Up</h1>
+          <br>
+          <label>
+            <input type="text" placeholder="Name" [(ngModel)]="name" name="name" required #nameInput="ngModel" />
+          </label>
+          <div *ngIf="nameInput.invalid && nameInput.touched" class="error">Name is required</div>
+  
+          <label>
+            <input type="text" placeholder="Phone number" [(ngModel)]="phone" name="phone" required pattern="^[0-9]{10}$" #phoneInput="ngModel" [ngStyle]="{'color': phoneInput.valid ? 'black' : 'red'}" />
+          </label>
+          <div *ngIf="phoneInput.invalid && phoneInput.touched" class="error">Phone number must be 10 digits</div>
+  
+          <label>
+            <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required email pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailInput="ngModel" />
+          </label>
+          <div *ngIf="emailInput.invalid && emailInput.touched" class="error">Email must be in the format user&#64;domain.com</div>
+  
+          <label>
+            <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required #passwordInput="ngModel" />
+          </label>
+          <div *ngIf="passwordInput.invalid && passwordInput.touched" class="error">Password is required</div>
+  
+          <button type="submit" id="signUp">Sign Up</button>
+        </form>
+      </div>
+  
+      <div class="form-container sign-in-container">
+        <form #signInForm="ngForm" (ngSubmit)="signIn(signInForm)">
+          <h1>Sign in</h1>
+          <br>
+          <label>
+            <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required email pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #signInEmailInput="ngModel" />
+          </label>
+          <div *ngIf="signInEmailInput.invalid && signInEmailInput.touched" class="error">Email must be in the format user&#64;domain.com</div>
+  
+          <label>
+            <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required #signInPasswordInput="ngModel" />
+          </label>
+          <div *ngIf="signInPasswordInput.invalid && signInPasswordInput.touched" class="error">Password is required</div>
+  
+          <button type="submit" id="signIn">Sign In</button>
+        </form>
+      </div>
+  
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1 class="create">Log in</h1>
+            <p>Sign in here if you already have an account </p>
+            <button id="signIn" class="ghost" (click)="deactivateRightPanel($event)">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1 class="create">Create, Account!</h1>
+            <p>Sign up if you still don't have an account ... </p>
+            <button id="signUp" class="ghost" (click)="activateRightPanel($event)">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

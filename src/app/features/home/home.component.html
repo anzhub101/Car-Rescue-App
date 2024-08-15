@@ -1,5 +1,37 @@
-<m-container>
-  <br><br>
-  <button class="pure-button" (click)="goToDefineRoute()"> Define Route </button> 
-  <button class="pure-button" (click)="goToTrackRoute()"> Track Route </button> 
-</m-container>
+<section *ngIf="!isLoggedIn">
+  <br><br><br><br><br><br><br><br><br><br><br>
+  <m-login (userLoggedIn)="handleUserLoggedIn($event)"></m-login>
+</section>
+
+<section *ngIf="isLoggedIn">
+  <m-container>
+    <br><br><br> 
+    <h1>
+      Welcome to the car rescue app!
+    </h1>
+    <h2>
+      The go-to app for users if they need anything when their car has let them down!
+      Here are three different features to select from:
+    </h2>
+    <ol>
+      <li>
+        <h3>Self Help</h3>
+        <p> The first feature gives you step-by-step instructions for some of the typical car issues you might face.</p>
+        <button class="pure-button small-button" (click)="navigateTo('feature1')"> Self Help </button>
+      </li>
+      <li>
+        <h3>User assistance</h3>
+        <p> The second feature provides a unique solution by pinging nearby users for assistance, in case you couldn't solve the issue yourself.</p>
+        <button class="pure-button small-button" (click)="navigateTo('feature2')"> User Assistance </button>
+
+      </li>
+      <li>
+        <h3>Professional help</h3>
+        <p> The third feature acts as a final resort and allows you to contact roadside assistance and access mechanics nearby to help your situation.</p>
+        <button class="pure-button small-button" (click)="navigateTo('feature3')"> Professional Help </button>
+      </li>
+    </ol>
+    <h3>Click here to log out</h3>
+    <button class="pure-button" (click)="logOut()"> Log Out</button>
+  </m-container>
+</section>
